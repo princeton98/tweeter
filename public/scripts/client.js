@@ -28,8 +28,14 @@
 // sections inner instead of article
 //
 $(document).ready(function () {
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const createTweetElement = function (tweets) {
-    //create article, surround the whole thing around article
     const $tweet = $(`
   <article class="tweet">
     <header class="user">
@@ -41,7 +47,7 @@ $(document).ready(function () {
       <div class="tag"> ${tweets.user.handle}</div>
     </header>
     <section class="content">
-      <p class="tweet-body">${tweets.content.text}</p>
+      <p class="tweet-body">${escape(tweets.content.text)}</p>
     </section>
     <footer class="bottom-bar">
       <p class="info">${tweets.created_at}</p>
@@ -76,26 +82,29 @@ $(document).ready(function () {
   $(function () {
     const $button = $("#submit");
     $button.on("click", function () {
+      $(".error").empty();
+      //event.preventDefault();
 
       const textLength = ($("textarea")[0].value.length);
       if (textLength === 0) {
-        alert("Invalid Tweet");
+        $(".error").prepend("Invalid Tweet");
+        $(".error").slideDown("slow", function(){
+
+        });
         event.preventDefault();
         return;
       } else if (textLength > 140) {
-        alert("Message too Long");
+        $(".error").prepend("Message Too Long");
+        $(".error").slideDown("slow", function(){
+        });
         event.preventDefault();
         return;
       }
       event.preventDefault();
       let serial = $("textarea").serialize()
       $.post("/tweets", serial, function () {
-        console.log("hello");
-        // clearTweets();
-        // loadTweets();
+        //console.log("hello");
         loadTweet();
-        //$.get("/", function (){
-       // });
       })
     })
     const loadTweet = () => {
@@ -105,35 +114,10 @@ $(document).ready(function () {
     }
 
     const renderTweet = function (tweet) {
-        $(".tweets-container").append(createTweetElement(tweet));
+        $(".tweets-container").prepend(createTweetElement(tweet));
     }
   })
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
   // create AJAX post, sends form data to the server
   // handle the submit event 
 
