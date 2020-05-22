@@ -36,6 +36,8 @@ $(document).ready(function () {
   }
 
   const createTweetElement = function (tweets) {
+    let date = new Date(tweets.created_at);
+    date = date.toLocaleString();
     const $tweet = $(`
   <article class="tweet">
     <header class="user">
@@ -50,8 +52,12 @@ $(document).ready(function () {
       <p class="tweet-body">${escape(tweets.content.text)}</p>
     </section>
     <footer class="bottom-bar">
-      <p class="info">${tweets.created_at}</p>
-      <p class="info">pictures</p>
+      <p class="info">${date}</p>
+      <p class="info">
+      <i class="fas fa-flag"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="fas fa-heart"></i>
+      </p>
     </footer>
   </article>
 `)
@@ -59,21 +65,13 @@ $(document).ready(function () {
   }
 
   const renderTweets = function (tweet) {
-    //loops through tweets
-    // calls createTweetElement for each tweet
-    // tkaes return value and appends it to the tweets container
     for (let element of tweet) {
-      //let value = createTweetElement(tweet)
-      // console.log(element);
       $(".tweets-container").append(createTweetElement(element));
     }
   }
 
   const loadTweets = function () {
-    // Ajax get request
-    // from /tweets route
     $.get("/tweets", function (tweetObj) {
-      //console.log("success" + tweetObj);
       renderTweets(tweetObj);
     })
   }
@@ -83,7 +81,6 @@ $(document).ready(function () {
     const $button = $("#submit");
     $button.on("click", function () {
       $(".error").empty();
-      //event.preventDefault();
 
       const textLength = ($("textarea")[0].value.length);
       if (textLength === 0) {
@@ -117,14 +114,6 @@ $(document).ready(function () {
         $(".tweets-container").prepend(createTweetElement(tweet));
     }
   })
-
-  // create AJAX post, sends form data to the server
-  // handle the submit event 
-
-  //const $tweet = createTweetElement(tweetData);
-  //console.log($tweet);
-  //$(".tweets-container").append($tweet);
-  //renderTweets(data);
 })
 
 
