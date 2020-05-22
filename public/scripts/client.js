@@ -66,7 +66,7 @@ $(document).ready(function () {
 
   const renderTweets = function (tweet) {
     for (let element of tweet) {
-      $(".tweets-container").append(createTweetElement(element));
+      $(".tweets-container").prepend(createTweetElement(element));
     }
   }
 
@@ -103,6 +103,7 @@ $(document).ready(function () {
         //console.log("hello");
         loadTweet();
       })
+      $("#tweet-text").val("");
     })
     const loadTweet = () => {
       $.get("/tweets", function (tweetObj) {
