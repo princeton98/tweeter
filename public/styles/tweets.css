@@ -1,10 +1,6 @@
 .tweets-container {
   display: flex;
   flex-direction: column;
-  border-bottom: solid;
-  border-top: solid;
-  border-left: solid;
-  border-right: solid;
   margin-top: 1.5em;
 }
 .ImageName {
@@ -15,7 +11,12 @@
 .tweet {
   display: flex;
   flex-direction: column;
-  opacity: .5;
+  opacity: .7;
+  border-top: solid;
+  border-left: solid;
+  border-right: solid;
+  border-bottom: solid;
+  margin-bottom: 1.5em;
 }
 .effects {
   opacity: 1;
@@ -49,6 +50,7 @@ article.tweet header{
   border-bottom: solid;
   padding-bottom: 25px;
   margin-bottom: auto;
+  word-break: break-all;
 }
 
 article.tweet footer {

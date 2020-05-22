@@ -32,7 +32,30 @@ span {
   margin-left: 5%;
   margin-right: 5%;
 }
+.profile {
+  justify-content: center;
+  margin-top: 3.812em;
+  background-color: burlywood;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/*@media (min-width: 768px) {
+
+}
+*/
+ @media (min-width: 1024px) {
+  body {
+    display: flex;
+    align-items: flex-start;
+  }
+  .profile {
+    margin-top: 7.5em;
+    margin-right: 5.5em;
+    margin-left:5.5em;
+  }
+  .container {
+    margin-top: 5.5em
+  }
+ }
