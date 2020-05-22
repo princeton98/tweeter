@@ -13,11 +13,24 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #009c9c;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
+}
+
+span {
+  font-family: "Bungee", cursive;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /*

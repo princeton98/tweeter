@@ -1,0 +1,34 @@
+#new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-text {
+  width: 100%;
+  background-color: #009c9c;
+    background-image: url(https://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 32px;
+}
+
+.bottom-text {
+  display: flex;
+  justify-content:space-between;
+}
+
+button {
+  font-family: Bungee, cursive;
+  background-color: #4056a1;
+  color: #FFFFFF;
+}
+
+.counter {
+  font-family: Bungee, cursive;
+}
+#redCounter {
+  font-family: Bungee, cursive;
+  color: #FF0000 
+
+}

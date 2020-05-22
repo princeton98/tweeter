@@ -1,0 +1,18 @@
+nav {
+  height: 90px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+.left-margin {
+  margin: 1.5em
+}
+.right-margin {
+  margin: 1.5em
+}
+

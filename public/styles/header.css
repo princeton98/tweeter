@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+.profile {
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
