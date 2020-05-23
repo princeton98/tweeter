@@ -58,10 +58,7 @@ article.tweet footer {
   display: flex;
   justify-content: space-between;
 }
-article.tweet:hover{
-  opacity: 1;
-  box-shadow: 10px 10px;
-}
+
 
 .info {
   display: flex;
@@ -69,4 +66,16 @@ article.tweet:hover{
   margin-top: 0px;
   font-size: large;
   font-weight: 600;
+}
+#icons {
+  opacity: 0;
+}
+/* Hovering effects */
+article.tweet:hover{
+  opacity: 1;
+  box-shadow: 10px 10px;
+}
+
+article.tweet:hover #icons {
+  opacity: 1;
 }

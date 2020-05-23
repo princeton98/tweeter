@@ -14,7 +14,6 @@
   outline: 0;
 }
 
-
 .bottom-text {
   display: flex;
   justify-content:space-between;
@@ -42,6 +41,7 @@
   font-weight: 700;
   font-size: x-large;
 }
+
 #popup {
   display: none;
 }

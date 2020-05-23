@@ -40,10 +40,6 @@ span {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-/*@media (min-width: 768px) {
-
-}
-*/
  @media (min-width: 1024px) {
   body {
     display: flex;
