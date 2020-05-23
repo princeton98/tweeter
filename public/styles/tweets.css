@@ -37,12 +37,10 @@ article.tweet header{
   align-items: center;
 }
 .tag {
-  color: transparent;
+  opacity: 0.5;
   display: flex;
   align-items: center;
-}
-.tag:hover {
-  color: lightsteelblue;
+  color: firebrick;
 }
 
 .tweet-body {

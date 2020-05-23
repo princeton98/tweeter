@@ -9,11 +9,9 @@ nav {
   width: 100%;
   top: 0px;
   z-index: 99999;
+  padding: 1.5em;
 }
-.left-margin {
-  margin: 1.5em
+#compose {
+  font-weight: 700;
+  background-color: darksalmon;
 }
-.right-margin {
-  margin: 1.5em
-}
-

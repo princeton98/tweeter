@@ -20,7 +20,7 @@
   justify-content:space-between;
 }
 
-button {
+#submit {
   font-family: Bungee, cursive;
   background-color: #4056a1;
   color: #FFFFFF;
@@ -41,4 +41,7 @@ button {
   background-color: khaki;
   font-weight: 700;
   font-size: x-large;
+}
+#popup {
+  display: none;
 }
