@@ -28,15 +28,17 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="left-margin">tweeter</span>
-      <div class="right-margin"><strong>Write</strong> a new tweet</div>
+      <span>tweeter</span>
+      <div><strong>Write</strong> a new tweet
+        <button id="compose">Compose</button>
+      </div>
     </nav>
     <header class="profile">
       <div class="center">
           <img src="/images/profile-hex.png"> 
       </div>
       <div class="center">
-          <h2>Your Name</h2>
+          <h2>Cierra Andrews</h2>
       </div>
     </header>
 
@@ -44,9 +46,9 @@
     <main class="container">
       <section class="new-tweet">
         <p class="error"></p>
-        <form method="POST" action="/tweets">
+        <form method="POST" action="/tweets" id="popup"> 
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" autofocus></textarea>
           <div class="bottom-text">
             <button id = "submit" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
